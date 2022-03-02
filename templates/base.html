@@ -3,29 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-                    crossorigin="anonymous">
-    <title>{{ prof }}</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-    <div  class="alert alert-primary" role="alert">
-        <h1>Миссия Колонизация Марса</h1>
-        <h4>И на Марсе будут яблони цвести!</h4>
-    </div>
- {% if prof.find('строитель') == 0 or prof.find('инженер') == 0 %}
-        <div>
-        <h2 align="center">Инженерные тренажеры</h2>
-        <img src='https://b.radikal.ru/b32/2202/24/f02c55795ac6.jpg'
-                    alt="здесь должна была быть картинка, но не нашлась">
-        </div>
- {% else %}
-       <div>
-       <h2 align="center">Научные симуляторы</h2>
-            <img src='https://a.radikal.ru/a20/2202/58/60435f5f68df.jpg'
-                        alt="здесь должна была быть картинка, но не нашлась">
-       </div>
- {% endif %}
+<div class="alert alert-primary" role="alert">
+    <h1>Миссия Колонизация Марса</h1>
+    <h4 style="opacity:.4">И на Марсе будут яблони цвести!</h4>
+</div>
+{% block content %} {% endblock %}
 </body>
 </html>

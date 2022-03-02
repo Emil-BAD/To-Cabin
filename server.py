@@ -4,14 +4,14 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/training/<prof>')
-def index(prof):
-    return render_template('base.html', prof=prof)
+@app.route('/<team>')
+def index(team):
+    return render_template('cabin.html', team=team.split(', '))
 
 
-@app.route('/list_prof/<value>')
-def prof_list(value):
-    return render_template('prof_list.html', value=value)
+@app.route('/distribution/<team>')
+def names_cabin(team):
+    return render_template('', team=team)
 
 
 if __name__ == '__main__':
