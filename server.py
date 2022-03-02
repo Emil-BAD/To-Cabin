@@ -4,14 +4,9 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/<team>')
+@app.route('/distribution/<team>')
 def index(team):
     return render_template('cabin.html', team=team.split(', '))
-
-
-@app.route('/distribution/<team>')
-def names_cabin(team):
-    return render_template('', team=team)
 
 
 if __name__ == '__main__':
